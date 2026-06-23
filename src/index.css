@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* compensa a barra de categorias fixa ao rolar até uma seção */
+  scroll-padding-top: 124px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #0e0e0c;
+  color: #241912;
+  font-family: 'Jost', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Papel quente com textura granulada muito sutil, evocando o cardápio impresso */
+.bg-paper-grain {
+  background-color: #fbf8f1;
+  background-image:
+    radial-gradient(circle at 20% 15%, rgba(196, 163, 90, 0.05), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(45, 30, 22, 0.04), transparent 40%);
+}
+
+/* Filete dourado fino usado como divisor ornamental */
+.rule-gold {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(196, 163, 90, 0.65) 18%,
+    rgba(196, 163, 90, 0.65) 82%,
+    transparent
+  );
+}
+
+/* "Losango" central do filete ornamental */
+.diamond {
+  width: 6px;
+  height: 6px;
+  transform: rotate(45deg);
+  background: #c4a35a;
+}
+
+/* Linha pontilhada que conecta nome do prato ao preço, como em cardápios clássicos */
+.leader {
+  flex: 1;
+  margin: 0 0.6rem 0.3rem;
+  border-bottom: 1px dotted rgba(110, 102, 90, 0.45);
+}
+
+/* Esconde scrollbar da barra de categorias mantendo o scroll por toque */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Remove o "x" nativo do campo de busca (evita colidir com o botão Limpar) */
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Faixa de respiro no topo da navegação ao chegar coladinha */
+.nav-shadow {
+  box-shadow: 0 10px 30px -18px rgba(14, 14, 12, 0.55);
+}
+
+::selection {
+  background: rgba(196, 163, 90, 0.3);
+}
